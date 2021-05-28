@@ -1,0 +1,12 @@
+rcj_soccer_referee_supervisor/
+rcj_soccer_team_yellow/
+rcj_soccer_team_blue/
+
+__pycache__
+*.pyc
+*.bat
+*.sh
+*.exe
+*.zip
+*.sublime-workspace
+*.sublime-project
