@@ -3,7 +3,6 @@ def get_direction(ball_angle: float) -> int:
 		return 0
 	return -1 if ball_angle < 180 else 1
 
-
 class Others:
 	_operation=None
 

@@ -2,25 +2,27 @@ from utils import Others
 
 class Defender(Others):
 	def processing_defence(self,data):
-		if data:
-			if self.chk_position():#守備範囲外の場合
-				if self.chk_ball_position():
-					#自陣にボール
-					self.catch_ball()
-				else:
-					#敵陣にボール
-					if self.team == "B":
-						return self.go_point_use_coordinate(2,0)
-					else:
-						return self.go_point_use_coordinate(-2,0)
+		if self.chk_position():#守備範囲外の場合
+			if self.chk_ball_position():
+				#自陣にボール
+				self.catch_ball()
 			else:
-				if self.chk_ball_position():
-					self.catch_ball()
-				else:
-					if self.y < 0.3 and self.y > -0.3:
-						return self.go_point_use_coordinate(self.x,self._operation["ball"]['y'])
+				#敵陣にボール
+				if self.team == "B":
+					if self._operation["ball"]['x'] > self._get_min_x():
+						self.catch_ball()
 					else:
-						return self.go_point_use_coordinate(self.x,0)
+						return self.go_point_use_coordinate(2,0)
+				else:
+					return self.go_point_use_coordinate(-2,0)
+		else:
+			if self.chk_ball_position():
+				self.catch_ball()
+			else:
+				if self.y < 0.3 and self.y > -0.3:
+					return self.go_point_use_coordinate(self.x,self._operation["ball"]['y'])
+				else:
+					return self.go_point_use_coordinate(self.x,0)
 
 
 
