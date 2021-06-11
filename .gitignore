@@ -1,6 +1,7 @@
 rcj_soccer_referee_supervisor/
 rcj_soccer_team_yellow/
 rcj_soccer_team_blue/
+my_controller/
 
 __pycache__
 *.pyc
