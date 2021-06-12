@@ -3,9 +3,6 @@ from utils import Others
 class Defender(Others):
 	i=0
 	def processing_defence(self, data:dict):
-		if self.team=="B":
-			print(f"{self.i}:{self.chk_attack()}")
-			self.i+=1
 		a, _=self.chk_attack()
 		if a:
 			return self.catch_ball()
