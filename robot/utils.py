@@ -14,10 +14,10 @@ class Others:
 		print(f"robot_angle:{self.robot_angle}")
 		print(f"orientation:{self.orientation}")
 		print(f"direction:{self.direction}")
-		print(f"ball:{self._operation['ball']}")
+		print(f"ball:{self.ball}")
 
 
-	def motor(self,left,right):
+	def motor(self,left:int, right:int):
 		self.left_motor.setVelocity(left*-1)
 		self.right_motor.setVelocity(right*-1)
 
@@ -25,8 +25,8 @@ class Others:
 		#データ取得andインスタンス変数の設定
 		if self.is_new_data():
 			self._operation=self.get_new_data()
-			self.ball_angle, self.robot_angle=self.get_angles(self._operation["ball"],self._operation[self.name])
-			self.x, self.y = self._operation[self.name]["x"], self._operation[self.name]["y"]
+			self.x, self.y, self.ball = self._operation[self.name]["x"], self._operation[self.name]["y"], self._operation['ball']
+			self.ball_angle, self.robot_angle=self.get_angles(self.ball,self._operation[self.name])
 			if self._operation[self.name]["orientation"]*-1 < 0:
 				self.orientation = True
 			else:
@@ -37,11 +37,11 @@ class Others:
 			return None
 
 	def get_ball_angle(self):
-		result, _ = self.get_angles(self._operation["ball"],self._operation[self.name])
+		result, _ = self.get_angles(self.ball,self._operation[self.name])
 		return result
 
 	def get_robot_angle(self):
-		_, result = self.get_angles(self._operation["ball"],self._operation[self.name])
+		_, result = self.get_angles(self.ball,self._operation[self.name])
 		return result
 
 	def catch_ball(self):
@@ -64,11 +64,12 @@ class Others:
 
 	def chk_ball_position(self):#自陣True 敵陣False
 		if self.team=="B":
-			return True if self._operation["ball"]["x"]>0 else False
+			return True if self.ball["x"]>0 else False
 		else:
-			return True if self._operation["ball"]["x"]<0 else False
+			return True if self.ball["x"]<0 else False
 
-	def go_point_use_coordinate(self,x,y):
+	def go_point_use_coordinate(self, x:float, y:float):
+		
 		angle, _ =self.get_angles({'x':x,'y':y},self._operation[self.name])
 		direction = get_direction(angle)
 		if direction:

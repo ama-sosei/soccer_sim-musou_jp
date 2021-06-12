@@ -9,7 +9,6 @@ TIME_STEP = 64
 ROBOT_NAMES = ["B1", "B2", "B3", "Y1", "Y2", "Y3"]
 N_ROBOTS = len(ROBOT_NAMES)
 
-
 class RCJSoccerRobot(Attacker,Defender):
 	def __init__(self):
 		self.robot = Robot()
@@ -84,8 +83,6 @@ class RCJSoccerRobot(Attacker,Defender):
 
 	def run(self):
 		while self.robot.step(TIME_STEP) != -1:
-			if self.name != "B3":
-				continue
 			data=self.fetch_operation()
 			if data:
 				if self.x == self._get_min_x():
