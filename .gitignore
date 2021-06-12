@@ -3,7 +3,7 @@ rcj_soccer_team_yellow/
 rcj_soccer_team_blue/
 my_controller/
 
-__pycache__
+__pycache__/
 *.pyc
 *.bat
 *.sh
@@ -11,3 +11,4 @@ __pycache__
 *.zip
 *.sublime-workspace
 *.sublime-project
+*.code-workspace
