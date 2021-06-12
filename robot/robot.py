@@ -1,15 +1,17 @@
 import math
 import struct
-from typing import Tuple
+from typing import Tuple, NoReturn
 from controller import Robot
-from attacker import Attacker
-from defender import Defender
+import attacker
+import defender
+import utils
 
 TIME_STEP = 64
 ROBOT_NAMES = ["B1", "B2", "B3", "Y1", "Y2", "Y3"]
 N_ROBOTS = len(ROBOT_NAMES)
 
-class RCJSoccerRobot(Attacker,Defender):
+
+class RCJSoccerRobot(attacker.Attacker, defender.Defender, utils.Others):
 	def __init__(self):
 		self.robot = Robot()
 		self.name = self.robot.getName()
@@ -61,8 +63,6 @@ class RCJSoccerRobot(Attacker,Defender):
 
 	def get_angles(self, ball_pos: dict, robot_pos: dict) -> Tuple[float, float]:
 		robot_angle: float = robot_pos['orientation']
-
-		# Get the angle between the robot and the ball
 		angle = math.atan2(
 			ball_pos['y'] - robot_pos['y'],
 			ball_pos['x'] - robot_pos['x'],
@@ -81,21 +81,14 @@ class RCJSoccerRobot(Attacker,Defender):
 
 		return robot_ball_angle, robot_angle
 
-	def run(self):
+	def run(self) -> NoReturn:
 		while self.robot.step(TIME_STEP) != -1:
-			data=self.fetch_operation()
+			data = self.fetch_operation()
 			if data:
 				if self.x == self._get_min_x():
 					func = self.processing_defence
 				else:
 					func = self.processing_goal
 				func(data)
-
-	def _get_min_x(self):
-		if self.team == 'Y':
-			return min([self._operation[i]['x'] for i in self._operation if i[0] == self.team])
-		else:
-			return max([self._operation[i]['x'] for i in self._operation if i[0] == self.team])
-
 
 RCJSoccerRobot().run()
