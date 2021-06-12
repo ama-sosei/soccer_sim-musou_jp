@@ -35,7 +35,6 @@ class Defender(Others):
 
 	def chk_attack(self):
 		other_robo_x=[self._operation[i]["x"] for i in ["B1", "B2", "B3", "Y1", "Y2", "Y3"] if i != self.name]
-		print(other_robo_x,self.ball["x"])
 		if self.chk_ball_position():
 			return False, 1
 		elif (
