@@ -1,6 +1,7 @@
 from typing import Tuple, NoReturn
 
 
+
 class Defender(object):
 	def processing_defence(self, data: dict) -> NoReturn:
 		a, _=self.chk_attack()
@@ -25,6 +26,7 @@ class Defender(object):
 					self.go_point_use_coordinate(self.x,self.ball['y'])
 				else:
 					self.go_point_use_coordinate(self.x,0)
+
 
 	def chk_position(self) -> bool:
 		if self.team == "B":

@@ -49,9 +49,9 @@ class Others:
 
 	def catch_ball(self) -> int:
 		if self.direction:
-			return self.motor(self.direction * -5, self.direction * 5)
+			return self.motor(self.direction * -10, self.direction * 10)
 		else:
-			return self.motor(5,5)
+			return self.motor(10,10)
 
 	def catch_ball_around(self) -> int:
 		direction=self.ball_angle*(2/3)
@@ -61,7 +61,7 @@ class Others:
 		if direction:
 			return self.motor(direction * -5, direction * 5)
 		else:
-			return self.motor(5,5)
+			return self.motor(10,10)
 
 
 
@@ -75,9 +75,9 @@ class Others:
 		angle, _ =self.get_angles({'x':x,'y':y},self._operation[self.name])
 		direction = get_direction(angle)
 		if direction:
-			return self.motor(direction * -5, direction * 5)
+			return self.motor(direction * -10, direction * 10)
 		else:
-			return self.motor(5,5)
+			return self.motor(10,10)
 
 	def _get_min_x(self) -> float:
 		if self.team == 'Y':
