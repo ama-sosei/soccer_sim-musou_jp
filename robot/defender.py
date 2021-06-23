@@ -1,6 +1,7 @@
-from typing import Tuple, NoReturn
-
-
+from typing import (
+	Tuple,
+	NoReturn
+)
 
 class Defender(object):
 	def processing_defence(self, data: dict) -> NoReturn:

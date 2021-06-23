@@ -1,6 +1,9 @@
 import math
 import struct
-from typing import Tuple, NoReturn
+from typing import (
+	Tuple,
+	NoReturn
+)
 from controller import Robot
 import attacker
 import defender

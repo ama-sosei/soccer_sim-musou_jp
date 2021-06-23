@@ -1,4 +1,8 @@
-from typing import Tuple, Union, NoReturn
+from typing import (
+	Tuple,
+	Union,
+	NoReturn
+)
 
 def get_direction(ball_angle: float) -> int:
 	if ball_angle >= 345 or ball_angle <= 15:
@@ -59,7 +63,7 @@ class Others:
 			direction-=360
 		direction=get_direction(direction)
 		if direction:
-			return self.motor(direction * -5, direction * 5)
+			return self.motor(direction * -10, direction * 10)
 		else:
 			return self.motor(10,10)
 
