@@ -1,0 +1,2 @@
+{"datetime": "2021-06-22T23:19:17.671335Z", "matchtime": 0, "event": "KICKOFF", "payload": {"robot_name": "Y3", "team_name": "B"}}
+{"datetime": "2021-06-22T23:19:17.745347Z", "matchtime": 0, "event": "MATCH_START", "payload": {"score_yellow": 0, "score_blue": 0, "total_match_time": 120, "team_name_yellow": "The Yellows", "team_name_blue": "The Blues", "match_id": "1", "halftime": 1}}

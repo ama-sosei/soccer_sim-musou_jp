@@ -1,0 +1,9 @@
+{"datetime": "2021-06-22T23:52:45.174761Z", "matchtime": 0, "event": "KICKOFF", "payload": {"robot_name": "Y3", "team_name": "B"}}
+{"datetime": "2021-06-22T23:52:45.264875Z", "matchtime": 0, "event": "MATCH_START", "payload": {"score_yellow": 0, "score_blue": 0, "total_match_time": 120, "team_name_yellow": "The Yellows", "team_name_blue": "The Blues", "match_id": "1", "halftime": 1}}
+{"datetime": "2021-06-22T23:53:17.000032Z", "matchtime": 30.463999999996645, "event": "GOAL", "payload": {"team_name": "The Yellows", "score_yellow": 1, "score_blue": 0}}
+{"datetime": "2021-06-22T23:53:18.096051Z", "matchtime": 31.487999999996532, "event": "KICKOFF", "payload": {"robot_name": "Y3", "team_name": "B"}}
+{"datetime": "2021-06-22T23:53:50.001740Z", "matchtime": 61.75999999999384, "event": "GOAL", "payload": {"team_name": "The Blues", "score_yellow": 1, "score_blue": 1}}
+{"datetime": "2021-06-22T23:53:51.097429Z", "matchtime": 62.78399999999384, "event": "KICKOFF", "payload": {"robot_name": "Y3", "team_name": "Y"}}
+{"datetime": "2021-06-22T23:54:37.219523Z", "matchtime": 106.75199999999387, "event": "GOAL", "payload": {"team_name": "The Blues", "score_yellow": 1, "score_blue": 2}}
+{"datetime": "2021-06-22T23:54:38.331423Z", "matchtime": 107.77599999999387, "event": "KICKOFF", "payload": {"robot_name": "Y3", "team_name": "Y"}}
+{"datetime": "2021-06-22T23:54:51.155516Z", "matchtime": 120.06399999999388, "event": "MATCH_FINISH", "payload": {"total_match_time": 120, "score_yellow": 1, "score_blue": 2, "team_name_yellow": "The Yellows", "team_name_blue": "The Blues"}}
